@@ -2,6 +2,9 @@ package initialize
 
 import (
 	"github.com/gin-gonic/gin"
+	swaggerFiles "github.com/swaggo/files"
+	ginSwagger "github.com/swaggo/gin-swagger"
+	docs "job-maching/docs"
 	"job-maching/global"
 	"net/http"
 )
@@ -9,9 +12,9 @@ import (
 func Routers() *gin.Engine {
 	Router := gin.Default()
 
-	//docs.SwaggerInfo.BasePath = global.GB_CONFIG.System.RouterPrefix
-	//Router.GET(global.GB_CONFIG.System.RouterPrefix+"/swagger/*any", ginSwagger.WrapHandler(swaggerFiles.Handler))
-	//global.GB_LOG.Info("register swagger handler")
+	docs.SwaggerInfo.BasePath = global.CONFIG.System.RouterPrefix
+	Router.GET(global.CONFIG.System.RouterPrefix+"/swagger/*any", ginSwagger.WrapHandler(swaggerFiles.Handler))
+	global.LOG.Info("register swagger handler")
 
 	PublicGroup := Router.Group(global.CONFIG.System.RouterPrefix)
 	{

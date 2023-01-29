@@ -15,9 +15,9 @@ func RegisterTables(db *gorm.DB) {
 		// システム
 		system.SysApi{},
 		//master.Authority{},
-		master.Industry{},
+		//master.Industry{},
 		master.Occupation{},
-		master.Menu{},
+		//master.Menu{},
 		master.ProgramLanguage{},
 		//master.User{},
 	)

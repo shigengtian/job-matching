@@ -1,5 +1,16 @@
 # github.com/flipped-aurora/gin-vue-admin/server Global Configuration
 
+# system configuration
+system:
+  env: public # Change to "develop" to skip authentication for development mode
+  addr: 8888
+  oss-type: local
+  use-redis: false
+  use-multipoint: false
+  iplimit-count: 15000
+  iplimit-time: 3600
+  router-prefix: ""
+
 # jwt configuration
 jwt:
   signing-key: qmPlus
