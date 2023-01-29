@@ -1,48 +1,54 @@
 ---
-name: '报告 Bug | Report bug 🐛'
-about: 报告 Ant Design Pro 的 bug
-title: '🐛 [BUG]'
-labels: '🐛 bug'
+name: Bug report
+about: Create a report to help us improve（Bug 反馈）
+title: ''
+labels: ''
 assignees: ''
+
 ---
 
-### 🐛 bug 描述
+**Describe the bug （描述 Bug）**
 
-<!--
-详细地描述 bug，让大家都能理解
-Describe the bug in detail so that everyone can understand it
--->
+A clear and concise description of what the bug is.
 
-### 📷 复现步骤 | Recurrence steps
 
-<!--
-清晰描述复现步骤，让别人也能看到问题
-Clearly describe the recurrence steps so that others can see the problem
--->
 
-### 🏞 期望结果 | Expected results
+**To Reproduce （重现步骤）**
+Steps to reproduce the behavior:
 
-<!--
-描述你原本期望看到的结果
-Describe what you expected to see
--->
+1. Go to '...'
+2. Click on '....'
+3. Scroll down to '....'
+4. See error
 
-### 💻 复现代码 | Recurrence code
 
-<!--
-提供可复现的代码，仓库，或线上示例
-Provide reproducible code, warehouse, or online examples
--->
 
-### © 版本信息
+**Expected behavior（你期待的是什么?）**
+A clear and concise description of what you expected to happen.
 
-- Ant Design Pro 版本: [e.g. 4.0.0]
-- umi 版本
-- 浏览器环境
-- 开发环境 [e.g. mac OS]
 
-### 🚑 其他信息
 
-<!--
-如截图等其他信息可以贴在这里
--->
+**Screenshots（截图）**
+If applicable, add screenshots to help explain your problem.
+
+
+
+**Desktop (please complete the following information):**
+
+ - OS: [e.g. iOS]
+ - Browser [e.g. chrome, safari]
+ - Version [e.g. 22]
+
+
+
+**Smartphone (please complete the following information):**
+
+ - Device: [e.g. iPhone6]
+ - OS: [e.g. iOS8.1]
+ - Browser [e.g. stock browser, safari]
+ - Version [e.g. 22]
+
+
+
+**Additional context（附加信息）**
+Add any other context about the problem here.
