@@ -24,14 +24,14 @@ func RunWindowsServer() {
 	Router := initialize.Routers()
 	Router.Static("/form-generator", "./resource/page")
 
-	address := fmt.Sprintf(":%d", global.GB_CONFIG.System.Addr)
+	address := fmt.Sprintf(":%d", global.CONFIG.System.Addr)
 	s := initServer(address, Router)
 	// In order to ensure that the text order output can be deleted
 	time.Sleep(10 * time.Microsecond)
-	global.GB_LOG.Info("server run success on ", zap.String("address", address))
+	global.LOG.Info("server run success on ", zap.String("address", address))
 
 	fmt.Printf(`
 	Buy me coffe
 `, address)
-	global.GB_LOG.Error(s.ListenAndServe().Error())
+	global.LOG.Error(s.ListenAndServe().Error())
 }

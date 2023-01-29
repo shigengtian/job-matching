@@ -10,32 +10,15 @@ import (
 )
 
 var (
-	GB_DB     *gorm.DB
-	GB_DBList map[string]*gorm.DB
-	GB_REDIS  *redis.Client
-	GB_CONFIG config.Server
-	GB_VP     *viper.Viper
+	DB     *gorm.DB
+	REDIS  *redis.Client
+	CONFIG config.Server
+	VP     *viper.Viper
 	// GVA_LOG    *oplogging.Logger
-	GB_LOG *zap.Logger
+	LOG *zap.Logger
 	//GB_Timer               timer.Timer = timer.NewTimerTask()
 	//GB_Concurrency_Control = &singleflight.Group{}
 
 	//BlackCache local_cache.Cache
 	lock sync.RWMutex
 )
-
-func GetGlobalDBByDBName(dbname string) *gorm.DB {
-	lock.RLock()
-	defer lock.RUnlock()
-	return GB_DBList[dbname]
-}
-
-func MustGetGlobalDBByDBName(dbname string) *gorm.DB {
-	lock.RLock()
-	defer lock.RUnlock()
-	db, ok := GB_DBList[dbname]
-	if !ok || db == nil {
-		panic("db no init")
-	}
-	return db
-}

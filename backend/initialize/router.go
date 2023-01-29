@@ -13,7 +13,7 @@ func Routers() *gin.Engine {
 	//Router.GET(global.GB_CONFIG.System.RouterPrefix+"/swagger/*any", ginSwagger.WrapHandler(swaggerFiles.Handler))
 	//global.GB_LOG.Info("register swagger handler")
 
-	PublicGroup := Router.Group(global.GB_CONFIG.System.RouterPrefix)
+	PublicGroup := Router.Group(global.CONFIG.System.RouterPrefix)
 	{
 		PublicGroup.GET("/health", func(c *gin.Context) {
 			c.JSON(http.StatusOK, "ok")
@@ -29,6 +29,6 @@ func Routers() *gin.Engine {
 	//
 	//}
 
-	global.GB_LOG.Info("router register success")
+	global.LOG.Info("router register success")
 	return Router
 }

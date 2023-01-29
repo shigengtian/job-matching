@@ -3,7 +3,7 @@ package system
 import "job-maching/global"
 
 type SysApi struct {
-	global.GB_MODEL
+	global.MODEL
 	Path        string `json:"path" gorm:"comment:api path"`
 	Description string `json:"description" gorm:"comment:api description"`
 	ApiGroup    string `json:"apiGroup" gorm:"comment:api group"`

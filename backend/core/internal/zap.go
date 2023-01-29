@@ -14,7 +14,7 @@ type _zap struct{}
 
 // Author [SliverHorn](https://github.com/SliverHorn)
 func (z *_zap) GetEncoder() zapcore.Encoder {
-	if global.GB_CONFIG.Zap.Format == "json" {
+	if global.CONFIG.Zap.Format == "json" {
 		return zapcore.NewJSONEncoder(z.GetEncoderConfig())
 	}
 	return zapcore.NewConsoleEncoder(z.GetEncoderConfig())
@@ -28,9 +28,9 @@ func (z *_zap) GetEncoderConfig() zapcore.EncoderConfig {
 		TimeKey:        "time",
 		NameKey:        "logger",
 		CallerKey:      "caller",
-		StacktraceKey:  global.GB_CONFIG.Zap.StacktraceKey,
+		StacktraceKey:  global.CONFIG.Zap.StacktraceKey,
 		LineEnding:     zapcore.DefaultLineEnding,
-		EncodeLevel:    global.GB_CONFIG.Zap.ZapEncodeLevel(),
+		EncodeLevel:    global.CONFIG.Zap.ZapEncodeLevel(),
 		EncodeTime:     z.CustomTimeEncoder,
 		EncodeDuration: zapcore.SecondsDurationEncoder,
 		EncodeCaller:   zapcore.FullCallerEncoder,
@@ -50,13 +50,13 @@ func (z *_zap) GetEncoderCore(l zapcore.Level, level zap.LevelEnablerFunc) zapco
 
 // Author [SliverHorn](https://github.com/SliverHorn)
 func (z *_zap) CustomTimeEncoder(t time.Time, encoder zapcore.PrimitiveArrayEncoder) {
-	encoder.AppendString(global.GB_CONFIG.Zap.Prefix + t.Format("2006/01/02 - 15:04:05.000"))
+	encoder.AppendString(global.CONFIG.Zap.Prefix + t.Format("2006/01/02 - 15:04:05.000"))
 }
 
 // Author [SliverHorn](https://github.com/SliverHorn)
 func (z *_zap) GetZapCores() []zapcore.Core {
 	cores := make([]zapcore.Core, 0, 7)
-	for level := global.GB_CONFIG.Zap.TransportLevel(); level <= zapcore.FatalLevel; level++ {
+	for level := global.CONFIG.Zap.TransportLevel(); level <= zapcore.FatalLevel; level++ {
 		cores = append(cores, z.GetEncoderCore(level, z.GetLevelPriority(level)))
 	}
 	return cores

@@ -5,7 +5,7 @@ import (
 	"time"
 )
 
-type GB_MODEL struct {
+type MODEL struct {
 	ID        uint `gorm:"primarykey"`
 	CreatedAt time.Time
 	UpdatedAt time.Time

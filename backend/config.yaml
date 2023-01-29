@@ -42,28 +42,17 @@ captcha:
   open-captcha-timeout: 3600
 
 pgsql:
-  path: ""
-  port: ""
+  path: "localhost"
+  port: "5432"
   config: ""
-  db-name: ""
-  username: ""
-  password: ""
+  db-name: "postgres"
+  username: "shi"
+  password: "s#nd0#B9@iW5"
   max-idle-conns: 10
   max-open-conns: 100
   log-mode: ""
   log-zap: false
 
-mssql:
-  path: ""
-  port: ""
-  config: ""
-  db-name: ""
-  username: ""
-  password: ""
-  max-idle-conns: 10
-  max-open-conns: 100
-  log-mode: ""
-  log-zap: false
 db-list:
   - disable: true # 是否禁用
     type: "" # 数据库的类型,目前支持mysql、pgsql、mssql、oracle
@@ -96,13 +85,6 @@ aws-s3:
   base-url: https://gin.vue.admin
   path-prefix: github.com/flipped-aurora/gin-vue-admin/server
 
-# huawei obs configuration
-hua-wei-obs:
-  path: you-path
-  bucket: you-bucket
-  endpoint: you-endpoint
-  access-key: you-access-key
-  secret-key: you-secret-key
 
 # excel configuration
 excel:
