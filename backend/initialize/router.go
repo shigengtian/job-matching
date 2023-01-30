@@ -4,10 +4,8 @@ import (
 	"github.com/gin-gonic/gin"
 	swaggerFiles "github.com/swaggo/files"
 	ginSwagger "github.com/swaggo/gin-swagger"
-	v1 "job-maching/api/v1"
-	"job-maching/docs"
+	"job-maching/api/v1"
 	"job-maching/global"
-	"net/http"
 )
 
 //	@contact.name	API Support
@@ -18,23 +16,21 @@ import (
 // @license.url	http://www.apache.org/licenses/LICENSE-2.0.html
 func Routers() *gin.Engine {
 	Router := gin.Default()
-	docs.SwaggerInfo.Title = "Swagger Example API"
-	docs.SwaggerInfo.Description = "This is a sample server Petstore server."
-	docs.SwaggerInfo.Version = "1.0"
-	docs.SwaggerInfo.Host = "petstore.swagger.io"
-	docs.SwaggerInfo.BasePath = "/v2"
-	docs.SwaggerInfo.Schemes = []string{"http", "https"}
+	//docs.SwaggerInfo.Title = "Swagger Example API"
+	//docs.SwaggerInfo.Description = "This is a sample server Petstore server."
+	//docs.SwaggerInfo.Version = "1.0"
+	//docs.SwaggerInfo.Host = "petstore.swagger.io"
+	//docs.SwaggerInfo.BasePath = "/v2"
+	//docs.SwaggerInfo.Schemes = []string{"http", "https"}
 	//docs.SwaggerInfo.BasePath = global.CONFIG.System.RouterPrefix
 	Router.GET(global.CONFIG.System.RouterPrefix+"/swagger/*any", ginSwagger.WrapHandler(swaggerFiles.Handler))
 	global.LOG.Info("register swagger handler")
 	// programmatically set swagger info
-	Router.GET("/", v1.Helloworld)
+	//Router.GET("/", api.Helloworld)
 
 	PublicGroup := Router.Group(global.CONFIG.System.RouterPrefix)
 	{
-		PublicGroup.GET("/health", func(c *gin.Context) {
-			c.JSON(http.StatusOK, "ok")
-		})
+		PublicGroup.GET("/", v1.Helloworld)
 	}
 	//{
 	//	systemRouter.InitBaseRouter(PublicGroup)

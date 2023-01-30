@@ -1,7 +1,13 @@
 {
     "swagger": "2.0",
     "info": {
-        "contact": {}
+        "description": "api document",
+        "title": "gin-swagger todos",
+        "contact": {},
+        "license": {
+            "name": "shigengtian"
+        },
+        "version": "1.0"
     },
     "paths": {}
 }

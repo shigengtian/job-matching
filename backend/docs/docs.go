@@ -10,6 +10,9 @@ const docTemplate = `{
         "description": "{{escape .Description}}",
         "title": "{{.Title}}",
         "contact": {},
+        "license": {
+            "name": "shigengtian"
+        },
         "version": "{{.Version}}"
     },
     "host": "{{.Host}}",
@@ -19,12 +22,12 @@ const docTemplate = `{
 
 // SwaggerInfo holds exported Swagger Info so clients can modify it
 var SwaggerInfo = &swag.Spec{
-	Version:          "",
+	Version:          "1.0",
 	Host:             "",
 	BasePath:         "",
 	Schemes:          []string{},
-	Title:            "",
-	Description:      "",
+	Title:            "gin-swagger todos",
+	Description:      "api document",
 	InfoInstanceName: "swagger",
 	SwaggerTemplate:  docTemplate,
 }

@@ -10,6 +10,10 @@ import (
 	"job-maching/initialize"
 )
 
+// @title gin-swagger todos
+// @version 1.0
+// @license.name shigengtian
+// @description api document
 func main() {
 	global.VP = core.Viper()
 	global.LOG = core.Zap()

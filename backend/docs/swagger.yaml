@@ -1,4 +1,9 @@
 info:
   contact: {}
+  description: api document
+  license:
+    name: shigengtian
+  title: gin-swagger todos
+  version: "1.0"
 paths: {}
 swagger: "2.0"

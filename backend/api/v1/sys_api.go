@@ -2,21 +2,65 @@ package v1
 
 import (
 	"github.com/gin-gonic/gin"
-	"net/http"
+	"job-maching/model/request"
+	"job-maching/model/response"
 )
 
-// @BasePath /api/v1
+func CreateApi(c *gin.Context) {
+	var api request.SearchApiReq
+	err := c.ShouldBindJSON(&api)
+	if err != nil {
+		response.FailWithMessage(err.Error(), c)
+		return
+	}
+	response.OkWithMessage("success", c)
+}
 
-// PingExample godoc
-// @Summary ping example
-// @Schemes
-// @Description do ping
-// @Tags example
-// @Accept json
-// @Produce json
-// @Success 200 {string} Helloworld
-// @Router /example/helloworld [get]
+func DeleteApi(c *gin.Context) {
+	var api request.SearchApiReq
+	err := c.ShouldBindJSON(&api)
+	if err != nil {
+		response.FailWithMessage(err.Error(), c)
+		return
+	}
+	response.OkWithMessage("success", c)
+}
+func GetApiList(c *gin.Context) {
+	var api request.SearchApiReq
+	err := c.ShouldBindJSON(&api)
+	if err != nil {
+		response.FailWithMessage(err.Error(), c)
+		return
+	}
+	response.OkWithMessage("success", c)
+}
 
-func Helloworld(g *gin.Context) {
-	g.JSON(http.StatusOK, "helloworld")
+func GetApiById(c *gin.Context) {
+	var api request.SearchApiReq
+	err := c.ShouldBindJSON(&api)
+	if err != nil {
+		response.FailWithMessage(err.Error(), c)
+		return
+	}
+	response.OkWithMessage("success", c)
+}
+
+func UpdateApi(c *gin.Context) {
+	var api request.SearchApiReq
+	err := c.ShouldBindJSON(&api)
+	if err != nil {
+		response.FailWithMessage(err.Error(), c)
+		return
+	}
+	response.OkWithMessage("success", c)
+}
+
+func DeleteApisByIds(c *gin.Context) {
+	var api request.SearchApiReq
+	err := c.ShouldBindJSON(&api)
+	if err != nil {
+		response.FailWithMessage(err.Error(), c)
+		return
+	}
+	response.OkWithMessage("success", c)
 }
