@@ -30,7 +30,10 @@ func Routers() *gin.Engine {
 
 	PublicGroup := Router.Group(global.CONFIG.System.RouterPrefix)
 	{
-		PublicGroup.GET("/", v1.Helloworld)
+		PublicGroup.GET("/", v1.CreateApi)
+		//PublicGroup.GET("/", v1.CreateApi)
+		//PublicGroup.GET("/", v1.CreateApi)
+		//PublicGroup.GET("/", v1.CreateApi)
 	}
 	//{
 	//	systemRouter.InitBaseRouter(PublicGroup)
